@@ -1,70 +1,103 @@
-$colors: #4a90e2 #00408b;
-.header {
-  background: nth($colors, 1);
-  text-align: center;
-  &__ul {
-    position: relative;
-    display: inline-block;
-    padding-left: 0;
-    margin-bottom: 0;
-    &:after {
-      content: "";
-      width: 90px;
-      height: 3px;
-      background: nth($colors, 2);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      transition: all 200ms;
-    }
+@import 'components/variables';
+$blue: #4a90e2;
+$blueDeep: #00408b;
+$red: #d0021b;
+$yellow: #fff2dc;
+$yelloDeep: #f5a623;
+$gray10: #f2f2f2;
+$gray20: #e1e1e1;
+$gray30: #c8c8c8;
+$gray40: #757575;
+body {
+  background: $gray20;
+}
+
+header {
+  background-color: $blue;
+  ul {
     li {
-      display: inline-block;
-      &:hover,
-      &.active {
-        a {
-          color: #fff;
-        }
-      }
+      margin: 0 1rem;
       a {
         display: block;
-        padding: 12px;
-        color: nth($colors, 2);
-        text-decoration: none !important;
-        font-weight: 100;
-        font-size: 1.8em;
+        color: $blueDeep;
+        padding: 0.75rem 1rem !important;
+        &.active {
+          border-bottom: 3px solid $blueDeep;
+          color: #fff;
+        }
       }
     }
   }
 }
 
-.todolist {
-  &__ul {
-    padding-left: 0;
-    &__li {
-      padding: 16px 32px;
-      background: #f2f2f2;
-      margin-bottom: 20px; // box-shadow:0 2px 4px rgba(0,0,0,.2);
-      &__left {
-        padding: 0;
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+$p-1: 1.375rem;
+$p-2: calc(#{$p-1} + 2rem);
+.todoWrap {
+  position: relative;
+  padding-left: 0;
+  padding-bottom: 2rem;
+  li {
+    margin-bottom: 2rem;
+    list-style: none;
+    background-color: $gray10;
+    .todoList {
+      position: relative;
+      padding: $p-1;
+      padding-left: $p-2 !important;
+      .pretty {
+        position: absolute;
+        left: $p-1;
       }
-      &__center {
-        .info {
-          .title {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-          }
-          .info {
-            font-size: 15px;
-          }
-        }
+      h4 {
+        font-size: rem(20) !important;
+        margin-bottom: 0;
       }
-      &__right {
-        a {
-          margin-left: 32px;
+    }
+    .collapsing {
+      transition: none !important;
+    }
+    .collapse {
+      border-top: 1px solid $gray40;
+      padding: $p-1 $p-2;
+      .card {
+        padding: 0 !important;
+        border: none;
+        background-color: $gray10;
+        .input-group {
+          position: relative;
+          padding: 0 2.375rem;
           i {
-            font-size: 24px;
+            position: absolute;
+            left: -2.375rem;
           }
         }
+      }
+    }
+    .todolist-foot {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      .btn {
+        border-radius: 0;
+        font-size: rem(20);
+        padding: 0.75rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      }
+      .btn-cancel {
+        flex: 1;
+        color: $red;
+      }
+      .btn-submit {
+        flex: 1;
+        background: $blue;
+        color: #fff;
       }
     }
   }

@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
   <!-- select -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-  <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/todo.css">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -50,62 +49,202 @@
   </nav>
 
   <section class="container">
-    <div id="app">
-      <header class="header">
-        <ul class="header__ul" ref="ul">
-          <li class="active" v-on:click="click1()">
-            <a href="#">My Tasks</a>
-          </li>
-          <li>
-            <a href="#" v-on:click="click2()">In Progress</a>
-          </li>
-          <li>
-            <a href="#" v-on:click="click3()">Completed</a>
-          </li>
-        </ul>
-      </header>
-      <main>
-        <div class="container mt-3">
-          <input type="text" class="form-control" placeholder="Add Task">
-          <article class="todolist">
-            <ul class="todolist__ul mt-3">
+    <header>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">我的任務</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">進行中的任務</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">完成的任務</a>
+        </li>
+      </ul>
+    </header>
+    <main class="mt-3">
+      <input type="text" class="form-control" placeholder="+ 新增任務">
 
-              <li class="d-flex todolist__ul__li">
-                <div class="col-auto todolist__ul__li__left">
-                  <input type="checkbox">
+
+      <ul class="todoWrap mt-3">
+        <li>
+          <div class="todoList d-flex">
+            <div class="mr-auto d-flex align-items-center">
+              <div class="pretty p-icon">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label for="">&nbsp;</label>
                 </div>
-                <div class="col todolist__ul__li__center">
-                  <h4 class="title">Type Something here</h4>
-                  <div class="info d-flex">
-                    <div class="todolist__date mr-2">
-                      <i class="far fa-calendar-alt"></i>
-                      <span>10/2</span>
-                    </div>
-                    <div class="todolist__date mr-2">
-                      <i class="far fa-file"></i>
-                    </div>
-                    <div class="todolist__date">
-                      <i class="far fa-comment"></i>
-                    </div>
-
+              </div>
+              <h4>任務一</h4>
+            </div>
+            <div class="ml-auto">
+              <a href="#">星星</a>
+              <a class="btn btn-primary" data-toggle="collapse" href="#editPanel01" role="button" aria-expanded="false" aria-controls="editPanel01">
+                筆
+              </a>
+            </div>
+          </div>
+          <div class="collapse" id="editPanel01">
+            <div class="card card-body">
+              <div class="input-group">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>DeadLine</h4>
+                  <div class="form-inline">
+                    <input type="text" class="form-control mr-3">
+                    <input type="text" class="form-control">
                   </div>
                 </div>
-                <div class="col-auto todolist__ul__li__right">
-                  <a href="javascript:;">
-                    <i class="far fa-star"></i>
-                  </a>
-                  <a href="javascript:;">
-                    <i class="fas fa-pencil-alt"></i>
-                  </a>
+              </div>
+              <div class="input-group mt-3">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>檔案上傳</h4>
+                  <div class="form-inline">
+                    家家
+                  </div>
                 </div>
-              </li>
+              </div>
+              <div class="input-group mt-3">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>給點留言吧</h4>
+                  <div class="form-group">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="todolist-foot">
+              <button class="btn btn-cancel">取消</button>
+              <button class="btn btn-submit">確定</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="todoList d-flex">
+            <div class="mr-auto d-flex align-items-center">
+              <div class="pretty p-icon">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label for="">&nbsp;</label>
+                </div>
+              </div>
+              <h4>任務一</h4>
+            </div>
+            <div class="ml-auto">
+              <a href="#">星星</a>
+              <a class="btn btn-primary" data-toggle="collapse" href="#editPanel02" role="button" aria-expanded="false" aria-controls="editPanel02">
+                筆
+              </a>
+            </div>
+          </div>
+          <div class="collapse" id="editPanel02">
+            <div class="card card-body">
+              <div class="input-group">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>DeadLine</h4>
+                  <div class="form-inline">
+                    <input type="text" class="form-control mr-3">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mt-3">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>檔案上傳</h4>
+                  <div class="form-inline">
+                    家家
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mt-3">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>給點留言吧</h4>
+                  <div class="form-group">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="todolist-foot">
+              <button class="btn btn-cancel">取消</button>
+              <button class="btn btn-submit">確定</button>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="todoList d-flex">
+            <div class="mr-auto d-flex align-items-center">
+              <div class="pretty p-icon">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label for="">&nbsp;</label>
+                </div>
+              </div>
+              <h4>任務一</h4>
+            </div>
+            <div class="ml-auto">
+              <a href="#">星星</a>
+              <a class="btn btn-primary" data-toggle="collapse" href="#editPanel03" role="button" aria-expanded="false" aria-controls="editPanel03">
+                筆
+              </a>
+            </div>
+          </div>
+          <div class="collapse" id="editPanel03">
+            <div class="card card-body">
+              <div class="input-group">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>DeadLine</h4>
+                  <div class="form-inline">
+                    <input type="text" class="form-control mr-3">
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mt-3">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>檔案上傳</h4>
+                  <div class="form-inline">
+                    家家
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mt-3">
+                <div class="col pl-0">
+                  <h4>
+                    <i>icon</i>給點留言吧</h4>
+                  <div class="form-group">
+                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="todolist-foot">
+              <button class="btn btn-cancel">取消</button>
+              <button class="btn btn-submit">確定</button>
+            </div>
+          </div>
+        </li>
+      </ul>
 
-            </ul>
-          </article>
 
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+          craft beer labore wes anderson cred nesciunt sapiente ea proident.
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   </section>
 
 
