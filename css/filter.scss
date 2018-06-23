@@ -1,0 +1,15 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'components/variables';
+.bg-image-center {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bg-purple {
+  background-color: $purple;
+}
+
+.text-purple {
+  color: $purple;
+}

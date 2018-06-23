@@ -48,7 +48,7 @@
     </div>
   </nav>
 
-  <section class="container">
+  <section class="container-fluid pl-0 pr-0">
     <header>
       <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -68,8 +68,8 @@
 
       <ul class="todoWrap mt-3">
         <li>
-          <div class="todoList d-flex">
-            <div class="mr-auto d-flex align-items-center">
+          <div class="todoList d-flex align-items-start">
+            <div class="mr-auto todoList__left d-flex align-items-start flex-wrap">
               <div class="pretty p-icon">
                 <input type="checkbox" />
                 <div class="state p-primary">
@@ -78,21 +78,40 @@
                 </div>
               </div>
               <h4>任務一</h4>
+              <div class="w-100">
+                <label for="" class="mr-2">
+                  <i class="far fa-calendar-alt mr-1"></i>
+                  5/14
+                </label>
+                <label for="" class="mr-2">
+                  <i class="far fa-file mr-1"></i>
+                  5/14
+                </label>
+                <label for="">
+                  <i class="far fa-comments mr-1"></i>
+                  5/14
+                </label>
+              </div>
+
             </div>
-            <div class="ml-auto">
-              <a href="#">星星</a>
-              <a class="btn btn-primary" data-toggle="collapse" href="#editPanel01" role="button" aria-expanded="false" aria-controls="editPanel01">
-                筆
+            <div class="ml-auto todoList__right">
+              <a href="#" class="btn">
+                <i class="far fa-star"></i>
+              </a>
+              <a href="#editPanel01" class="btn" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="editPanel01">
+                <i class="fas fa-edit"></i>
               </a>
             </div>
           </div>
-          <div class="collapse" id="editPanel01">
+          <div class="collapse show" id="editPanel01">
             <div class="card card-body">
               <div class="input-group">
                 <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>DeadLine</h4>
-                  <div class="form-inline">
+                  <div class="panel-head">
+                    <h4>
+                      <i class="far fa-calendar-alt"></i>DeadLine</h4>
+                  </div>
+                  <div class="panel-body form-inline">
                     <input type="text" class="form-control mr-3">
                     <input type="text" class="form-control">
                   </div>
@@ -100,141 +119,37 @@
               </div>
               <div class="input-group mt-3">
                 <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>檔案上傳</h4>
-                  <div class="form-inline">
-                    家家
+                  <div class="panel-head">
+                    <h4>
+                      <i class="far fa-file"></i>檔案上傳</h4>
+                  </div>
+                  <div class="panel-body">
+                    1231312
                   </div>
                 </div>
               </div>
               <div class="input-group mt-3">
                 <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>給點留言吧</h4>
-                  <div class="form-group">
+                  <div class="panel-head">
+                    <h4>
+                      <i class="far fa-comments"></i>給點留言吧</h4>
+                  </div>
+                  <div class="panel-body">
                     <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+
                   </div>
                 </div>
               </div>
             </div>
             <div class="todolist-foot">
-              <button class="btn btn-cancel">取消</button>
-              <button class="btn btn-submit">確定</button>
+              <button class="btn btn-cancel">
+                <i class="fas fa-times"></i> 取消</button>
+              <button class="btn btn-submit">
+                <i class="fas fa-plus"></i> 確定</button>
             </div>
           </div>
         </li>
-        <li>
-          <div class="todoList d-flex">
-            <div class="mr-auto d-flex align-items-center">
-              <div class="pretty p-icon">
-                <input type="checkbox" />
-                <div class="state p-primary">
-                  <i class="icon mdi mdi-check"></i>
-                  <label for="">&nbsp;</label>
-                </div>
-              </div>
-              <h4>任務一</h4>
-            </div>
-            <div class="ml-auto">
-              <a href="#">星星</a>
-              <a class="btn btn-primary" data-toggle="collapse" href="#editPanel02" role="button" aria-expanded="false" aria-controls="editPanel02">
-                筆
-              </a>
-            </div>
-          </div>
-          <div class="collapse" id="editPanel02">
-            <div class="card card-body">
-              <div class="input-group">
-                <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>DeadLine</h4>
-                  <div class="form-inline">
-                    <input type="text" class="form-control mr-3">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-              </div>
-              <div class="input-group mt-3">
-                <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>檔案上傳</h4>
-                  <div class="form-inline">
-                    家家
-                  </div>
-                </div>
-              </div>
-              <div class="input-group mt-3">
-                <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>給點留言吧</h4>
-                  <div class="form-group">
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="todolist-foot">
-              <button class="btn btn-cancel">取消</button>
-              <button class="btn btn-submit">確定</button>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="todoList d-flex">
-            <div class="mr-auto d-flex align-items-center">
-              <div class="pretty p-icon">
-                <input type="checkbox" />
-                <div class="state p-primary">
-                  <i class="icon mdi mdi-check"></i>
-                  <label for="">&nbsp;</label>
-                </div>
-              </div>
-              <h4>任務一</h4>
-            </div>
-            <div class="ml-auto">
-              <a href="#">星星</a>
-              <a class="btn btn-primary" data-toggle="collapse" href="#editPanel03" role="button" aria-expanded="false" aria-controls="editPanel03">
-                筆
-              </a>
-            </div>
-          </div>
-          <div class="collapse" id="editPanel03">
-            <div class="card card-body">
-              <div class="input-group">
-                <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>DeadLine</h4>
-                  <div class="form-inline">
-                    <input type="text" class="form-control mr-3">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-              </div>
-              <div class="input-group mt-3">
-                <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>檔案上傳</h4>
-                  <div class="form-inline">
-                    家家
-                  </div>
-                </div>
-              </div>
-              <div class="input-group mt-3">
-                <div class="col pl-0">
-                  <h4>
-                    <i>icon</i>給點留言吧</h4>
-                  <div class="form-group">
-                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="todolist-foot">
-              <button class="btn btn-cancel">取消</button>
-              <button class="btn btn-submit">確定</button>
-            </div>
-          </div>
-        </li>
+
       </ul>
 
 
@@ -265,8 +180,8 @@
   <!-- jQuery library End -->
   <script>
     $('.selectpicker').selectpicker();
-  </script>
 
+  </script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
+@import 'bootstrap/scss/bootstrap';
 @import 'components/variables';
-$blue: #4a90e2;
-$blueDeep: #00408b;
+$baseColor: rgb(6, 163, 163);
+$baseColorDeep: darken($baseColor, 10%);
 $red: #d0021b;
 $yellow: #fff2dc;
 $yelloDeep: #f5a623;
@@ -13,16 +14,19 @@ body {
 }
 
 header {
-  background-color: $blue;
+  background-color: $baseColor;
   ul {
     li {
       margin: 0 1rem;
       a {
         display: block;
-        color: $blueDeep;
+        color: $baseColorDeep;
         padding: 0.75rem 1rem !important;
+        &:hover {
+          color: #fff;
+        }
         &.active {
-          border-bottom: 3px solid $blueDeep;
+          border-bottom: 3px solid $baseColorDeep;
           color: #fff;
         }
       }
@@ -49,21 +53,43 @@ $p-2: calc(#{$p-1} + 2rem);
       position: relative;
       padding: $p-1;
       padding-left: $p-2 !important;
+      &:hover:before {
+        content: '\f142';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        margin-top: -11px;
+        left: 0.175rem;
+        font-size: rem(22);
+        color: $gray20;
+      }
+      &__left {}
+      &__right {
+        a {
+          padding: 0;
+          margin-left: 1rem;
+          color: $baseColor;
+          i {
+            font-size: rem(20);
+          }
+        }
+      }
       .pretty {
         position: absolute;
         left: $p-1;
+        margin-top: 0.125rem;
       }
       h4 {
-        font-size: rem(20) !important;
-        margin-bottom: 0;
+        font-size: rem(20) !important; // margin-bottom: 0;
       }
     }
+    .collapse,
     .collapsing {
-      transition: none !important;
-    }
-    .collapse {
+      position: relative;
       border-top: 1px solid $gray40;
       padding: $p-1 $p-2;
+      padding-bottom: 6rem;
       .card {
         padding: 0 !important;
         border: none;
@@ -88,16 +114,23 @@ $p-2: calc(#{$p-1} + 2rem);
         border-radius: 0;
         font-size: rem(20);
         padding: 0.75rem;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        &:hover {
+          opacity: 0.8;
+        }
+        &:active {
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
       }
       .btn-cancel {
         flex: 1;
         color: $red;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
       }
       .btn-submit {
         flex: 1;
-        background: $blue;
+        background: $baseColor;
         color: #fff;
+        box-shadow: 0 2px 4px rgba($baseColor, 0.8);
       }
     }
   }
