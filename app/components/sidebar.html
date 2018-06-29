@@ -1,0 +1,63 @@
+<template id="sidebar">
+  <div>
+    <sidebar class="sidebar">
+      <ul class="floor-one">
+        <li>
+          <button class="btn dropdown-toggle" data-toggle="collapse" aria-expanded="false" data-target="#menu01" aria-controls="menu01">
+            前端時光屋
+          </button>
+          <div class="collapse show" id="menu01">
+            <ul class="floor-two">
+              <li>
+                <h6 class="dropdown-header d-flex no-gutters">
+                  <div class="mr-auto">第一週: TODOLIST</div>
+                  <div class="ml-auto">
+                    <a href="https://hexschool.github.io/THE_F2E_Design/todolist/" class="link" target="_blank">設計檔</a>
+                    <a href="01.todolist.html" class="link">實作</a>
+                  </div>
+                </h6>
+                <span class="deadline">2018/06/02 ~ 2018/06/09</span>
+              </li>
+              <li>
+                <h6 class="dropdown-header d-flex no-gutters">
+                  <div class="mr-auto">第二週: FILTER</div>
+                  <div class="ml-auto">
+                    <a href="https://hexschool.github.io/THE_F2E_Design/week2-filter" target="_blank" class="link">設計檔</a>
+                    <a href="02.filter.html" class="link">實作</a>
+                  </div>
+                </h6>
+                <span class="deadline">2018/06/09 ~ 2018/06/16</span>
+              </li>
+              <li>
+                <h6 class="dropdown-header d-flex no-gutters">
+                  <div class="mr-auto">第三週: ORDER</div>
+                  <div class="ml-auto">
+                    <a href="https://hexschool.github.io/THE_F2E_Design/week3-admin%20order/" target="_blank" class="link">設計檔</a>
+                    <a href="03.orderBackend.html" class="link">實作</a>
+                  </div>
+                </h6>
+                <span class="deadline">2018/06/17 ~ 2018/06/24</span>
+              </li>
+              <li>
+                <h6 class="dropdown-header d-flex no-gutters">
+                  <div class="mr-auto">第四週:PRODUCT</div>
+                  <div class="ml-auto">
+                    <a href="https://hexschool.github.io/THE_F2E_Design/week4-product%20gallery/" target="_blank" class="link">設計檔</a>
+                    <a href="04.product.html" class="link">實作</a>
+                  </div>
+                </h6>
+                <span class="deadline">2018/06/25 ~ 2018/07/01</span>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </sidebar>
+  </div>
+</template>
+
+<script>
+  Vue.component('sidebar-component', {
+    template: document.currentScript.ownerDocument.querySelector('#sidebar').innerHTML
+  })
+</script>

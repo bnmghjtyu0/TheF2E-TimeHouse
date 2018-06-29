@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>filter</title>
+  <!-- bootstrap scss 自定義檔 -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- fontawesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <!-- material-icons -->
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css">
+  <!-- pretty-checkbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
+  <!-- select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="css/filter.css">
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="import" href="./components/header.html">
+  <link rel="import" href="./components/sidebar.html">
+</head>
+
+<body>
+  <div id="app">
+    <!-- header -->
+    <header-component></header-component>
+    <!-- header end -->
+
+    <!-- sidebar -->
+    <sidebar-component></sidebar-component>
+    <!-- sidebar end -->
+
+    <main class="main">
+      <!-- filter 導覽列 -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-purple mb-3">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            Have Fun
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="搜尋" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <section class="container">
+        <div class="d-flex align-items-start">
+          <aside class="col-auto p-0 bg-white shadow-sm">
+            <div class="form-group p-4 border-bottom border-black-100" style="width:300px">
+              <h4 class="mb-3">地點</h4>
+              <select name="" id="" class="form-control"></select>
+            </div>
+            <div class="form-group p-4 border-bottom border-black-100" style="width:300px">
+              <h4 class="mb-3">日期</h4>
+              <div class="row mb-3">
+                <label for="" class="col-sm-3 col-form-label text-right">From</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <label for="" class="col-sm-3 col-form-label text-right">to</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group p-4" style="width:300px">
+              <h4 class="mb-3">分類</h4>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+              <div class="pretty p-icon d-block mb-3">
+                <input type="checkbox" />
+                <div class="state p-primary">
+                  <i class="icon mdi mdi-check"></i>
+                  <label>選項一</label>
+                </div>
+              </div>
+
+
+
+            </div>
+          </aside>
+
+          <div class="col ml-3 bg-white shadow-sm p-4">
+            <h2>為你搜尋 15 筆相關資訊</h2>
+
+            <div class="card d-flex w-100 flex-row mb-3">
+              <div class="bg bg-image-center" style="width:300px;height:12rem;background-image:url(https://source.unsplash.com/random/1600x900/?nature,water)"></div>
+              <div class="card-body">
+                <h2 class="text-purple">Kogi</h2>
+                <p>1232131</p>
+              </div>
+            </div>
+            <div class="card d-flex w-100 flex-row mb-3">
+              <div class="bg bg-image-center" style="width:300px;height:12rem;background-image:url(https://source.unsplash.com/random/1600x900/?nature,water)"></div>
+              <div class="card-body">
+                <h2 class="text-purple">Kogi</h2>
+                <p>1232131</p>
+              </div>
+            </div>
+            <div class="card d-flex w-100 flex-row mb-3">
+              <div class="bg bg-image-center" style="width:300px;height:12rem;background-image:url(https://source.unsplash.com/random/1600x900/?nature,water)"></div>
+
+              <div class="card-body">
+                <h2 class="text-purple">Kogi</h2>
+                <p>1232131</p>
+              </div>
+
+            </div>
+            <div class="card d-flex w-100 flex-row mb-3">
+              <div class="bg bg-image-center" style="width:300px;height:12rem;background-image:url(https://source.unsplash.com/random/1600x900/?nature,water)"></div>
+              <div class="card-body">
+                <h2 class="text-purple">Kogi</h2>
+                <p>1232131</p>
+              </div>
+
+
+            </div>
+            <div class="card d-flex w-100 flex-row mb-3">
+              <div class="bg bg-image-center" style="width:300px;height:12rem;background-image:url(https://source.unsplash.com/random/1600x900/?nature,water)"></div>
+
+              <div class="card-body">
+                <h2 class="text-purple">Kogi</h2>
+                <p>1232131</p>
+              </div>
+
+            </div>
+            <div class="card d-flex w-100 flex-row mb-3">
+              <div class="bg bg-image-center" style="width:300px;height:12rem;background-image:url(https://source.unsplash.com/random/1600x900/?nature,water)"></div>
+
+              <div class="card-body">
+                <h2 class="text-purple">Kogi</h2>
+                <p>1232131</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <!-- bootstrap 4.0 正式版 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+  <!-- jQuery library End -->
+  <script>
+    new Vue({
+      el: '#app'
+    })
+  </script>
+  <script>
+    $('.selectpicker').selectpicker();
+  </script>
+
+</body>
+
+</html>
