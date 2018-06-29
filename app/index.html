@@ -6,23 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>web-template</title>
-  <!-- bootstrap scss 自定義檔 -->
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
   <!-- fontawesome 5 -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
   <!-- material-icons -->
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css">
-  <!-- pretty-checkbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
-  <!-- select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-  <link rel="stylesheet" href="css/main.css">
+  <!-- height -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- heightlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
   <link rel="import" href="./components/header.html">
   <link rel="import" href="./components/sidebar.html">
 </head>
@@ -31,66 +30,132 @@
 
   <div id="app">
     <!-- header -->
-    <header-component></header-component>
+    <v-header></v-header>
     <!-- header end -->
 
     <!-- sidebar -->
-    <sidebar-component></sidebar-component>
+    <v-sidebar v-on:toggle="onChange"></v-sidebar>
     <!-- sidebar end -->
 
 
     <main class="main">
-      <div class="card mt-3">
+      <div class="card">
         <div class="card-header">
-          Pretty-checkbox
-          <a href="https://lokesh-coder.github.io/pretty-checkbox/" class="btn btn-primary">官方連結</a>
+          v-checkbox 、 v-radio
 
         </div>
         <div class="card-body">
-          <div class="pretty p-icon p-round p-bigger">
-            <input type="radio" name="icon_solid" checked/>
-            <div class="state p-warning">
-              <i class="icon mdi mdi-check"></i>
-              <label>是</label>
-            </div>
-          </div>
 
-          <div class="pretty p-icon p-round p-bigger">
-            <input type="radio" name="icon_solid" />
-            <div class="state p-warning">
-              <i class="icon mdi mdi-check"></i>
-              <label>否</label>
-            </div>
-          </div>
 
-          <div class="pretty p-icon">
-            <input type="checkbox" />
-            <div class="state p-primary">
-              <i class="icon mdi mdi-check"></i>
-              <label>選項一</label>
-            </div>
-          </div>
-          <div class="pretty p-icon">
-            <input type="checkbox" />
-            <div class="state p-primary">
-              <i class="icon mdi mdi-check"></i>
-              <label>選項二</label>
-            </div>
-          </div>
 
+
+          <div class="d-flex">
+            <div class="col">
+              <div class="d-flex">
+                <label class="v-label mr-3">radio01
+                  <input type="radio" name="sex" checked>
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="v-label">radio02
+                  <input type="radio" name="sex">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <pre v-highlightjs class="border border-primary mt-3">
+            <code class="html">
+  import radio&checkbox.css
+                
+  &lt;label class=&quot;v-label mr-3&quot;&gt;radio01
+    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; checked&gt;
+    &lt;span class=&quot;checkmark&quot;&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;label&gt;
+
+  &lt;label class=&quot;v-label&quot;&gt;radio02
+    &lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;
+    &lt;span class=&quot;checkmark&quot;&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;label&gt;
+            </code>
+          </pre>
+            </div>
+            <div class="col">
+              <div class="d-flex">
+                <label class="v-label mr-3">check01
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+
+                <label class="v-label mr-3">check02
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <pre v-highlightjs class="border border-primary mt-3">
+                      <code class="html">
+  import radio&checkbox.css
+  
+  &lt;label class=&quot;v-label mr-3&quot;&gt;One
+    &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt;
+    &lt;span class=&quot;checkmark&quot;&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;label&gt;
+
+  &lt;label class=&quot;v-label mr-3&quot;&gt;Two
+    &lt;input type=&quot;checkbox&quot;&gt;
+    &lt;span class=&quot;checkmark&quot;&gt;&lt;&#x2F;span&gt;
+  &lt;&#x2F;label&gt;
+                      </code>
+                    </pre>
+            </div>
+          </div>
         </div>
       </div>
       <div class="card mt-3">
         <div class="card-header">
-          bootstrap-select
-          <a href="https://silviomoreto.github.io/bootstrap-select/" class="btn btn-primary">官方連結</a>
+          v-select
         </div>
         <div class="card-body">
-          <select class="selectpicker form-control">
-            <option>電子白版</option>
-            <option>電子白版</option>
-          </select>
+          <div class="v-select" style="width:200px;">
+            <select class="form-control">
+              <option value="0">Select car:</option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+              <option value="3">Citroen</option>
+              <option value="4">Ford</option>
+              <option value="5">Honda</option>
+              <option value="6">Jaguar</option>
+              <option value="7">Land Rover</option>
+              <option value="8">Mercedes</option>
+              <option value="9">Mini</option>
+              <option value="10">Nissan</option>
+              <option value="11">Toyota</option>
+              <option value="12">Volvo</option>
+            </select>
+          </div>
+          <pre v-highlightjs class="border border-primary mt-3">
+  <code class="html">
+  import select.css
+  import select.js
 
+  &lt;div class=&quot;v-select&quot; style=&quot;width:200px;&quot;&gt;
+    &lt;select class=&quot;form-control&quot;&gt;
+      &lt;option value=&quot;0&quot;&gt;Select car:&lt;&#x2F;option&gt;
+      &lt;option value=&quot;1&quot;&gt;Audi&lt;&#x2F;option&gt;
+      &lt;option value=&quot;2&quot;&gt;BMW&lt;&#x2F;option&gt;
+      &lt;option value=&quot;3&quot;&gt;Citroen&lt;&#x2F;option&gt;
+      &lt;option value=&quot;4&quot;&gt;Ford&lt;&#x2F;option&gt;
+      &lt;option value=&quot;5&quot;&gt;Honda&lt;&#x2F;option&gt;
+      &lt;option value=&quot;6&quot;&gt;Jaguar&lt;&#x2F;option&gt;
+      &lt;option value=&quot;7&quot;&gt;Land Rover&lt;&#x2F;option&gt;
+      &lt;option value=&quot;8&quot;&gt;Mercedes&lt;&#x2F;option&gt;
+      &lt;option value=&quot;9&quot;&gt;Mini&lt;&#x2F;option&gt;
+      &lt;option value=&quot;10&quot;&gt;Nissan&lt;&#x2F;option&gt;
+      &lt;option value=&quot;11&quot;&gt;Toyota&lt;&#x2F;option&gt;
+      &lt;option value=&quot;12&quot;&gt;Volvo&lt;&#x2F;option&gt;
+    &lt;&#x2F;select&gt;
+  &lt;&#x2F;div&gt;
+  </code>
+</pre>
         </div>
       </div>
     </main>
@@ -107,19 +172,40 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <!-- select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
 
   <!-- jQuery library End -->
 
   <script>
+    Vue.directive('highlightjs', {
+      deep: true,
+      bind: function (el, binding) {
+        // on first bind, highlight all targets
+        let targets = el.querySelectorAll('code')
+        targets.forEach((target) => {
+          // if a value is directly assigned to the directive, use this
+          // instead of the element content.
+          if (binding.value) {
+            target.textContent = binding.value
+          }
+          hljs.highlightBlock(target)
+        })
+      }
+    })
+
     new Vue({
-      el: '#app'
+      el: '#app',
+      methods: {
+        onChange: function () {
+          let main = document.querySelector('.main');
+          main.classList.toggle('toggle');
+        }
+      }
     })
   </script>
-  <script>
-    $('.selectpicker').selectpicker();
-  </script>
+
+  <!-- select -->
+  <script src="components/Select/select.js"></script>
 
 </body>
 

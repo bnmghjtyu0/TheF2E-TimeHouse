@@ -1,5 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'components/variables';
+@import '../components/Select/select.scss';
+@import '../components/Checkbox/style01.scss';
 $navbar-h: 56px;
 $sidebar-w: 300px;
 body {
@@ -15,8 +17,19 @@ body {
   }
 }
 
+%closeSidebar {
+  width: 0;
+  padding: 0;
+  > * {
+    display: none;
+  }
+}
+%transition {
+  transition: all 200ms ease-in-out;
+}
 // sidebar
 .sidebar {
+  z-index: 1;
   position: fixed;
   width: $sidebar-w;
   height: 100%;
@@ -24,6 +37,41 @@ body {
   top: 0;
   padding: 0.75rem;
   margin-top: $navbar-h;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  @extend %transition;
+  &.show {
+    @extend %closeSidebar;
+  }
+
+  @media #{$col-xs} {
+    width: 0;
+    padding: 0;
+    > * {
+      display: none;
+    }
+    &.show {
+      width: $sidebar-w;
+      padding: 0.75rem;
+      > * {
+        display: block;
+      }
+    }
+  }
+  .switch {
+    position: absolute;
+    top: 0;
+    right: -2rem;
+    background-color: #fff;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0;
+    text-align: center;
+    border-radius: 0 0.175rem 0.175rem 0;
+    display: block;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+    cursor: pointer;
+  }
 
   .dropdown-toggle {
     font-size: rem(18);
@@ -84,5 +132,12 @@ body {
 .main {
   flex: 1 1 auto;
   margin-left: $sidebar-w;
-  padding: 0 0.75rem;
+  padding: 1.75rem;
+  @extend %transition;
+  &.toggle {
+    margin-left: 0;
+  }
+  @media #{$col-xs} {
+    margin-left: 0;
+  }
 }

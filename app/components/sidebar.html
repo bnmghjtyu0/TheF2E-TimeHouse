@@ -1,6 +1,9 @@
 <template id="sidebar">
   <div>
     <sidebar class="sidebar">
+      <button class="btn switch" v-on:click="aa">
+        <i class="fas fa-angle-right"></i>
+      </button>
       <ul class="floor-one">
         <li>
           <button class="btn dropdown-toggle" data-toggle="collapse" aria-expanded="false" data-target="#menu01" aria-controls="menu01">
@@ -57,7 +60,15 @@
 </template>
 
 <script>
-  Vue.component('sidebar-component', {
+  Vue.component('v-sidebar', {
+
+    methods: {
+      aa: function () {
+        let sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle("show");
+        this.$emit('toggle')
+      }
+    },
     template: document.currentScript.ownerDocument.querySelector('#sidebar').innerHTML
   })
 </script>

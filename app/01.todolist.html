@@ -31,11 +31,11 @@
 <body>
   <div id="app">
     <!-- header -->
-    <header-component></header-component>
+    <v-header></v-header>
     <!-- header end -->
 
     <!-- sidebar -->
-    <sidebar-component></sidebar-component>
+    <v-sidebar v-on:toggle="onChange"></v-sidebar>
     <!-- sidebar end -->
     <main class="main">
       <section class="container-fluid pl-0 pr-0">
@@ -172,7 +172,13 @@
   <!-- jQuery library End -->
   <script>
     new Vue({
-      el: '#app'
+      el: '#app',
+      methods: {
+        onChange: function () {
+          let main = document.querySelector('.main');
+          main.classList.toggle('toggle');
+        }
+      }
     })
   </script>
   <script>
