@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>product</title>
+  <!-- bootstrap scss 自定義檔 -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- fontawesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/product.css">
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="import" href="./components/header.html">
+  <link rel="import" href="./components/sidebar.html">
+</head>
+
+<body>
+  <div id="app">
+    <!-- header -->
+    <v-header></v-header>
+    <!-- header end -->
+
+    <!-- sidebar -->
+    <v-sidebar v-on:toggle="onChange"></v-sidebar>
+    <!-- sidebar end -->
+    <main class="main">
+      <article class="product">
+        <header class="product__header">
+          <label for="">CCCLOTHES</label>
+          <h1>MEN'S TOPS</h1>
+        </header>
+        <main class="product__main">
+          <div class="item item1">
+            <div class="item-content">
+              <h2 class="num">01</h2>
+              <h2 class="title" data-title="LINEN BLAZER">LINEN BLAZER</h2>
+              <h4 class="sub-title">Men’s outfit</h4>
+              <a href="#" class=" pic " style="background-image:url(https://images.unsplash.com/photo-1513827379601-9dba5099a3f9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1acdd78f34ee75aade9e313251bb1695&auto=format&fit=crop&w=668&q=80) ">
+              </a>
+              <div class="striped "></div>
+              <!-- <div class="square "></div> -->
+              <div class="square-border "></div>
+            </div>
+          </div>
+
+
+
+
+          <div class="item item2 ">
+            <div class="item-content ">
+              <h2 class="num ">02</h2>
+              <h2 class="title " data-title="FREELIFT ">FREELIFT</h2>
+              <h4 class="sub-title ">Men’s basics</h4>
+              <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1514632542677-48fae74a01b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cf412aceb1d689765e387d30fca7210a&auto=format&fit=crop&w=668&q=80) ">
+              </div>
+              <!-- <div class="striped "></div> -->
+              <div class="square "></div>
+              <div class="square-border "></div>
+            </div>
+          </div>
+
+
+
+
+          <div class="item item3 ">
+            <div class="item-content ">
+              <h2 class="num ">03</h2>
+              <h2 class="title " data-title="SUPER SKINNY ">SUPER SKINNY</h2>
+              <h4 class="sub-title ">Men’s pattern shirts</h4>
+              <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1496345875659-11f7dd282d1d?ixlib=rb-0.3.5&s=874cc02cb8392531e8598ea2ea9b8a30&auto=format&fit=crop&w=1500&q=80) ">
+              </div>
+              <!-- <div class="striped "></div> -->
+              <div class="square "></div>
+              <div class="square-border "></div>
+            </div>
+          </div>
+
+
+
+
+          <div class="item item4 ">
+            <div class="item-content ">
+              <h2 class="num ">04</h2>
+              <h2 class="title " data-title="LINEN BLAZER ">DENIM</h2>
+              <h4 class="sub-title ">Men’s cadual</h4>
+              <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1484516758160-69878111a911?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39466d66952b133d5a5cff642b970d05&auto=format&fit=crop&w=774&q=80) "></div>
+              <div class="striped "></div>
+              <!-- <div class="square "></div> -->
+              <div class="square-border "></div>
+            </div>
+          </div>
+
+
+
+
+          <div class="item item5 ">
+            <div class="item-content ">
+              <h2 class="num ">05</h2>
+              <h2 class="title " data-title="LINEN BLAZER ">SWEATSHIRTS</h2>
+              <h4 class="sub-title ">Men’s jacket</h4>
+              <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1525448198276-222de3961638?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43fb25556cdbd191e520c7f28739e40d&auto=format&fit=crop&w=1500&q=80) "></div>
+              <div class="striped "></div>
+              <!-- <div class="square "></div> -->
+              <div class="square-border "></div>
+            </div>
+          </div>
+
+
+
+
+          <div class="item item6 ">
+            <div class="item-content ">
+              <h2 class="num ">06</h2>
+              <h2 class="title " data-title="LINEN BLAZER ">VINTAGE DENIM</h2>
+              <h4 class="sub-title ">Men’s classic</h4>
+              <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1519406709381-c1f293304b28?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=98c497a29f229085d9574ee8b6eeef8c&auto=format&fit=crop&w=668&q=80) "></div>
+              <!-- <div class="striped "></div> -->
+              <div class="square "></div>
+              <div class="square-border "></div>
+            </div>
+          </div>
+
+
+
+
+          <div class="item item7 ">
+            <div class="item-content ">
+              <h2 class="num ">07</h2>
+              <h2 class="title " data-title="LINEN BLAZER ">EDITION</h2>
+              <h4 class="sub-title ">Men’s shirts</h4>
+              <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63ff45d79414b3166b08b800a32018be&auto=format&fit=crop&w=668&q=80) "></div>
+              <!-- <div class="striped "></div> -->
+              <div class="square "></div>
+              <div class="square-border "></div>
+            </div>
+          </div>
+
+
+
+
+        </main>
+      </article>
+
+    </main>
+  </div>
+
+
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+    crossorigin="anonymous "></script>
+  <!-- bootstrap 4.0 正式版 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+    crossorigin="anonymous "></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+    crossorigin="anonymous "></script>
+
+  <!-- jQuery library End -->
+  <script>
+    new Vue({
+      el: '#app',
+      methods: {
+        onChange: function () {
+          let main = document.querySelector('.main');
+          main.classList.toggle('toggle');
+        }
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>

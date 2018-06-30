@@ -5,13 +5,13 @@ var /*webserver = require('gulp-webserver')*/
 gulpPlumber = require('gulp-plumber') // 載入 gulp-plumber
 
 gulp.task('watch', function() {
-  gulp.watch(['css/*.scss', 'css/bootstrap/bootstrap.scss'], ['sass'])
-  gulp.watch('*.html', ['html'])
+  gulp.watch(['app/css/*.scss'], ['sass'])
+  gulp.watch('app/*.html', ['html'])
 })
 
 gulp.task('sass', function() {
   gulp
-    .src(['css/*.scss', 'css/bootstrap/bootstrap.scss']) // 指定要處理的 Scss 檔案目錄
+    .src(['app/css/*.scss']) // 指定要處理的 Scss 檔案目錄
     .pipe(gulpPlumber())
     .pipe(
       gulpSass({
@@ -19,13 +19,13 @@ gulp.task('sass', function() {
         outputStyle: 'compressed'
       })
     )
-    .pipe(gulp.dest('css')) // 指定編譯後的 css 檔案目錄
+    .pipe(gulp.dest('app/css')) // 指定編譯後的 css 檔案目錄
     .pipe(connect.reload()) // 當檔案異動後自動重新載入頁面
 })
 
 gulp.task('html', function() {
   gulp
-    .src('*.html')
+    .src('app/*.html')
     .pipe(gulpPlumber())
     .pipe(connect.reload()) // 當檔案異動後自動重新載入頁面
 })

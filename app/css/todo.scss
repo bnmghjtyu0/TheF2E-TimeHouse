@@ -1,5 +1,6 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'components/variables';
+@import 'main.scss';
 $baseColor: rgb(6, 163, 163);
 $baseColorDeep: darken($baseColor, 10%);
 $red: #d0021b;
@@ -35,7 +36,6 @@ header {
 }
 
 main {
-  width: 80%;
   margin: 0 auto;
 }
 
@@ -64,7 +64,8 @@ $p-2: calc(#{$p-1} + 2rem);
         font-size: rem(22);
         color: $gray20;
       }
-      &__left {}
+      &__left {
+      }
       &__right {
         a {
           padding: 0;
