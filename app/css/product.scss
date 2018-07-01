@@ -3,7 +3,8 @@
 @import 'main.scss';
 $green: #50e3c2;
 .product {
-  width: 960px;
+  max-width: 960px;
+  width: 100%;
   font-family: $fm1;
   margin: 0 auto;
   h1 {
@@ -77,6 +78,62 @@ $green: #50e3c2;
       width: 50%;
       float: left;
       margin-top: 10%;
+      &.hide {
+        display: none;
+      }
+      &.show {
+        transition: all 200ms;
+        display: block;
+        width: 720/960 * 100%;
+        margin: 10% auto 0 auto;
+        float: initial;
+        .item-content {
+          width: 100% !important;
+          padding-bottom: (400/960) * 100% !important;
+          transform: translate(0, 0) !important;
+          .num {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: initial !important;
+            right: initial !important;
+            transform: translate(-100%, 0) !important;
+            z-index: 2;
+          }
+          .title {
+            position: absolute;
+            top: 0 !important;
+            right: 0 !important;
+            left: initial !important;
+            bottom: initial !important;
+            z-index: 2;
+            transform: translate(0, -100%) !important;
+          }
+          .sub-title {
+            display: none;
+          }
+          .square {
+            position: absolute;
+            width: 25% !important;
+            height: 50% !important;
+            bottom: initial !important;
+            right: initial !important;
+            left: 0;
+            top: 0;
+            transform: translate(-25%, -25%) !important;
+          }
+          .square-border {
+            position: absolute;
+            width: 50% !important;
+            height: 100%;
+            top: initial !important;
+            left: initial !important;
+            right: 0;
+            bottom: 0;
+            transform: translate(12.5%, 25%) !important;
+          }
+        }
+      }
       .item-content {
         position: relative;
         height: 0;
@@ -335,7 +392,7 @@ $green: #50e3c2;
             position: absolute;
             left: 50%;
             bottom: 0;
-            transform: translate(-50%, calc(100% + 5px));
+            transform: translate(-50%, calc(100% + 8px));
             z-index: 2;
           }
           .striped {

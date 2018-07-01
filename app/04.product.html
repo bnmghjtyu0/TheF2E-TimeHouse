@@ -90,7 +90,7 @@
           <div class="item item4 ">
             <div class="item-content ">
               <h2 class="num ">04</h2>
-              <h2 class="title " data-title="LINEN BLAZER ">DENIM</h2>
+              <h2 class="title " data-title="DENIM">DENIM</h2>
               <h4 class="sub-title ">Men’s cadual</h4>
               <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1484516758160-69878111a911?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39466d66952b133d5a5cff642b970d05&auto=format&fit=crop&w=774&q=80) "></div>
               <div class="striped "></div>
@@ -105,7 +105,7 @@
           <div class="item item5 ">
             <div class="item-content ">
               <h2 class="num ">05</h2>
-              <h2 class="title " data-title="LINEN BLAZER ">SWEATSHIRTS</h2>
+              <h2 class="title " data-title="SWEATSHIRTS">SWEATSHIRTS</h2>
               <h4 class="sub-title ">Men’s jacket</h4>
               <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1525448198276-222de3961638?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=43fb25556cdbd191e520c7f28739e40d&auto=format&fit=crop&w=1500&q=80) "></div>
               <div class="striped "></div>
@@ -120,7 +120,7 @@
           <div class="item item6 ">
             <div class="item-content ">
               <h2 class="num ">06</h2>
-              <h2 class="title " data-title="LINEN BLAZER ">VINTAGE DENIM</h2>
+              <h2 class="title " data-title="VINTAGE DENIM">VINTAGE DENIM</h2>
               <h4 class="sub-title ">Men’s classic</h4>
               <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1519406709381-c1f293304b28?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=98c497a29f229085d9574ee8b6eeef8c&auto=format&fit=crop&w=668&q=80) "></div>
               <!-- <div class="striped "></div> -->
@@ -135,7 +135,7 @@
           <div class="item item7 ">
             <div class="item-content ">
               <h2 class="num ">07</h2>
-              <h2 class="title " data-title="LINEN BLAZER ">EDITION</h2>
+              <h2 class="title " data-title="EDITION">EDITION</h2>
               <h4 class="sub-title ">Men’s shirts</h4>
               <div class="pic " style="background-image:url(https://images.unsplash.com/photo-1516914943479-89db7d9ae7f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=63ff45d79414b3166b08b800a32018be&auto=format&fit=crop&w=668&q=80) "></div>
               <!-- <div class="striped "></div> -->
@@ -172,6 +172,19 @@
           let main = document.querySelector('.main');
           main.classList.toggle('toggle');
         }
+      },
+      mounted() {
+        let items = document.querySelectorAll('.product__main .item');
+        Array.from(items).forEach(item => {
+          item.addEventListener('click', function () {
+
+            Array.from(items).map(i => { i.classList.add('hide') })
+            Array.from(items).map(i => { i.classList.remove('show') })
+            this.classList.add('show');
+            this.classList.remove('hide');
+
+          })
+        })
       }
     })
   </script>
