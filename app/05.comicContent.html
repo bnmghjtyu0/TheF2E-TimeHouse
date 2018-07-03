@@ -14,6 +14,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/comic.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -38,29 +39,77 @@
           <h2>Comicomic</h2>
         </header>
         <main class="comic__main">
-          <div class="d-flex mt-3">
-            <h3 class="p-2">My Hexschool</h3>
-            <div class="v-select" style="width:200px;">
-              <select class="form-control">
-                <option value="1">Chapter 1</option>
-                <option value="2">Chapter 2</option>
-                <option value="3">Chapter 3</option>
-                <option value="4">Chapter 4</option>
-                <option value="5">Chapter 5</option>
-              </select>
-            </div>
-            <div class="v-select" style="width:200px;">
-              <select class="form-control">
-                <option value="1">Page 01</option>
-                <option value="2">Page 02</option>
-                <option value="3">Page 03</option>
-                <option value="4">Page 04</option>
-                <option value="5">Page 05</option>
-              </select>
-            </div>
-          </div>
+          <article class="comic-block comicBlock">
+            <section class="comic-setting d-flex mt-3">
+              <div class="mr-auto d-flex">
+                <h3 class="p-2">My Hexschool</h3>
+                <div class="v-select" style="width:120px;">
+                  <select class="form-control">
+                    <option value="1">Chapter 1</option>
+                    <option value="2">Chapter 2</option>
+                    <option value="3">Chapter 3</option>
+                    <option value="4">Chapter 4</option>
+                    <option value="5">Chapter 5</option>
+                  </select>
+                </div>
+                <div class="v-select" style="width:120px;">
+                  <select class="form-control">
+                    <option value="1">Page 01</option>
+                    <option value="2">Page 02</option>
+                    <option value="3">Page 03</option>
+                    <option value="4">Page 04</option>
+                    <option value="5">Page 05</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ml-auto d-flex align-items-center">
+                <i class="fas fa-sun"></i>
+                <label class="switch mx-2 mb-0">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+                </label>
+                <i class="far fa-moon"></i>
+              </div>
+            </section>
+            <!-- comic-show -->
+            <section class="comic-show my-3">
+              <!-- Swiper -->
+              <div class="slider-wrap">
+                <div class="swiper-container gallery-top">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  </div>
+                </div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next swiper-button-white"></div>
+                <div class="swiper-button-prev swiper-button-white"></div>
+              </div>
+              <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                  <div class="swiper-slide" style="background-image:url(http://www.2animx.com/upload/0w/12b/1275/186/1.png)"></div>
+                </div>
+              </div>
+            </section>
 
-
+          </article>
         </main>
       </article>
 
@@ -94,6 +143,46 @@
   <!-- select -->
   <script src="components/Select/select.js"></script>
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var galleryTop = new Swiper('.comic-show .gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    var galleryThumbs = new Swiper('.comic-show .gallery-thumbs', {
+      slidesPerView: 'auto',
+      touchRatio: 0.2,
+      slideToClickedSlide: true,
+      slidesPerView: 5,
+      spaceBetween: 10,
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 3,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        }
+      }
+    });
+    galleryTop.controller.control = galleryThumbs;
+    galleryThumbs.controller.control = galleryTop;
+
+  </script>
 </body>
 
 </html>
