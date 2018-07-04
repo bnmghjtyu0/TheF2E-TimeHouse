@@ -14,10 +14,7 @@
     crossorigin="anonymous">
   <!-- material-icons -->
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.4.85/css/materialdesignicons.min.css">
-  <!-- pretty-checkbox -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
-  <!-- select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
   <link rel="stylesheet" href="css/todo.css">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -60,14 +57,12 @@
             <li>
               <div class="todoList d-flex align-items-start">
                 <div class="mr-auto todoList__left d-flex align-items-start flex-wrap">
-                  <div class="pretty p-icon">
-                    <input type="checkbox" />
-                    <div class="state p-primary">
-                      <i class="icon mdi mdi-check"></i>
-                      <label for="">&nbsp;</label>
-                    </div>
-                  </div>
-                  <h4>任務一</h4>
+                  <label class="v-label">
+                    <h4>任務一</h4>
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+
                   <div class="w-100">
                     <label for="" class="mr-2">
                       <i class="far fa-calendar-alt mr-1"></i>
@@ -180,10 +175,6 @@
         }
       }
     })
-  </script>
-  <script>
-    $('.selectpicker').selectpicker();
-
   </script>
 </body>
 

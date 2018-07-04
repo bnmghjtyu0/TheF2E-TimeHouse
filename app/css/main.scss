@@ -1,10 +1,13 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'components/variables';
+@import 'components/switch';
+@import 'components/star';
 @import '../components/Select/select.scss';
 @import '../components/Checkbox/style01.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 // 字型
 $fm1: 'Roboto', sans-serif;
+$font-awesome: 'Font Awesome 5 Free';
 $navbar-h: 56px;
 $sidebar-w: 300px;
 body {

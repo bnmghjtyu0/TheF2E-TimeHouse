@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>product</title>
+  <!-- bootstrap scss 自定義檔 -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- fontawesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/comic.css">
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="import" href="./components/header.html">
+  <link rel="import" href="./components/sidebar.html">
+</head>
+
+<body>
+  <div id="app">
+    <!-- header -->
+    <v-header></v-header>
+    <!-- header end -->
+
+    <!-- sidebar -->
+    <v-sidebar v-on:toggle="onChange"></v-sidebar>
+    <!-- sidebar end -->
+    <main class="main">
+      <article class="comic">
+        <header class="comic__header">
+          <h2>Comicomic</h2>
+        </header>
+        <main class="comic__main">
+          <section class="item item01 mt-4">
+            <div class="item01__left">
+              <div class="pic" style="background-image:url(https://www.ttv.com.tw/play/2017/Hunter07/images/poster.jpg)"></div>
+            </div>
+            <div class="item01__right">
+              <h2 class="title">MY HEXSCHOOL</h2>
+              <div class="content">
+                <dl class="d-flex flex-wrap mb-4">
+                  <dt>Genres</dt>
+                  <dd>Fusce/vehicula/dolor</dd>
+                  <dt>Author</dt>
+                  <dd>Namae Shiranai</dd>
+                  <dt>Status</dt>
+                  <dd>Ongoing</dd>
+                  <dt>Rate</dt>
+                  <dd>
+                    <ul class="star">
+                      <li>
+                        <i class="fas fa-star"></i>
+                      </li>
+                      <li>
+                        <i class="fas fa-star"></i>
+                      </li>
+                      <li>
+                        <i class="fas fa-star"></i>
+                      </li>
+                      <li>
+                        <i class="fas fa-star"></i>
+                      </li>
+                      <li>
+                        <i class="fas fa-star"></i>
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <div>
+                  <h6>Summary</h6>
+                  <p>If your banker breaks, you snap; if your apothecary by mistake sends you poison in your pills, you die.
+                  </p>
+                  <p>Therefore, I say, I saw that this situation of mine was the precise situation of every mortal that has
+                    this Siamese connexion with a plurality of other mortals. </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="item item02 mt-4">
+            <h4>All Chapters</h4>
+            <div class="box">
+              <ul>
+                <li>
+                  <a href="05.comicContent.html">Chapter 1: The F2E Challenge Start!</a>
+                </li>
+                <li>
+                  <a href="javascript:;">
+                    Chapter 2: Todo List is Going Crazy!
+                    <span class="label-green ml-3">NEW</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </article>
+
+
+    </main>
+  </div>
+
+
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+    crossorigin="anonymous "></script>
+  <!-- bootstrap 4.0 正式版 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+    crossorigin="anonymous "></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+    crossorigin="anonymous "></script>
+
+  <!-- jQuery library End -->
+  <script>
+    new Vue({
+      el: '#app',
+      methods: {
+        onChange: function () {
+          let main = document.querySelector('.main');
+          main.classList.toggle('toggle');
+        }
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>
