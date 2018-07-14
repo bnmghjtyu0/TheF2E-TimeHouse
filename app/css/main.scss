@@ -2,14 +2,19 @@
 @import 'components/variables';
 @import 'components/switch';
 @import 'components/star';
+@import 'components/timeline';
 @import '../components/Select/select.scss';
 @import '../components/Checkbox/style01.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 // 字型
-$fm1: 'Roboto', sans-serif;
-$font-awesome: 'Font Awesome 5 Free';
+$fm1: 'Roboto',
+sans-serif;
 $navbar-h: 56px;
 $sidebar-w: 300px;
+html {
+  font-size: 62.5%;
+}
+
 body {
   padding-top: 3.56rem;
 }
@@ -25,7 +30,7 @@ body {
 %closeSidebar {
   width: 0;
   padding: 0;
-  > * {
+  >* {
     display: none;
   }
 }
@@ -52,13 +57,13 @@ body {
   @media #{$col-xs} {
     width: 0;
     padding: 0;
-    > * {
+    >* {
       display: none;
     }
     &.show {
       width: $sidebar-w;
       padding: 0.75rem;
-      > * {
+      >* {
         display: block;
       }
     }

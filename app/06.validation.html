@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/comic.css">
+  <link rel="stylesheet" href="css/validation.css">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -34,7 +34,168 @@
     <!-- sidebar end -->
     <main class="main">
       <article class="validation">
-        validation
+        <div class="container col-6">
+          <div class="col-6 offset-3">
+            <nav class="timeline">
+              <ul>
+                <li class="active" data-list="1" v-on:click="aa"></li>
+                <li class="ok" data-list="2" v-on:click="aa"></li>
+                <li data-list="3" v-on:click="aa"></li>
+                <li data-list="4" v-on:click="aa"></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="section section01 active" ref="section01">
+            <div class="header">
+              <h2>Create Account</h2>
+              <p>Glad to see you here!</p>
+            </div>
+
+            <div class="form-group">
+              <label for="">Account</label>
+              <input type="text" class="form-control" placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="text" class="form-control" placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+              <label for="">Comfirm Password</label>
+              <input type="text" class="form-control" placeholder="example@email.com">
+            </div>
+            <button class="btn btn-primary w-100" disabled>SUBMIT & NEXT</button>
+          </div>
+          <div class="section section02" ref="section02">
+            <div class="header">
+              <h2>General Infomation</h2>
+              <p>Tell us who you are!</p>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col">
+                <label for="">Name (optional)</label>
+                <input type="text" class="form-control" placeholder="Example Name">
+              </div>
+              <div class="col">
+                <label for="">Phone*</label>
+                <input type="text" class="form-control" placeholder="0912 345 678">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">Birth Date (optional)</label>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="example@email.com">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="example@email.com">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="example@email.com">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">Address*</label>
+              <div class="row">
+                <div class="col">
+                  <div class="v-select w-100">
+                    <select class="form-control">
+                      <option value="0">Select car:</option>
+                      <option value="1">Audi</option>
+                      <option value="2">BMW</option>
+                      <option value="3">Citroen</option>
+                      <option value="4">Ford</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="v-select w-100">
+                    <select class="form-control">
+                      <option value="0">Select car:</option>
+                      <option value="1">Audi</option>
+                      <option value="2">BMW</option>
+                      <option value="3">Citroen</option>
+                      <option value="4">Ford</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Address Detail">
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary w-100" disabled>SUBMIT & NEXT</button>
+          </div>
+          <div class="section section03" ref="section03">
+            <div class="header">
+              <h2>Update Profile Picture</h2>
+              <p>We wanna know you more!</p>
+            </div>
+
+            <div class="upload">
+              upload
+            </div>
+            <button class="btn btn-primary w-100" disabled>SUBMIT & NEXT</button>
+          </div>
+          <div class="section section04" ref="section04">
+            <div class="header">
+              <h2>Payment Method</h2>
+              <p>Add your credit card infomation! </p>
+            </div>
+
+            <div class="form-group">
+              <label for="">Card Number</label>
+              <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+            </div>
+            <div class="form-group row">
+              <div class="col">
+                <label for="">Password</label>
+                <input type="text" class="form-control" placeholder="Cardholder Name">
+              </div>
+              <div class="col">
+                <label for="">Bank Name</label>
+                <input type="text" class="form-control" placeholder="EXAMPLE BANK">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col">
+                <label for="">CVV</label>
+                <input type="text" class="form-control" placeholder="123">
+              </div>
+              <div class="col">
+                <label for="">Expire Date</label>
+                <div class="v-select w-100">
+                  <select class="form-control">
+                    <option value="0">MM</option>
+                    <option value="1">Audi</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Citroen</option>
+                    <option value="4">Ford</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <label for="">-</label>
+                <div class="v-select w-100">
+                  <select class="form-control">
+                    <option value="0">DD</option>
+                    <option value="1">Audi</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Citroen</option>
+                    <option value="4">Ford</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary w-100" disabled>SUBMIT & NEXT</button>
+          </div>
+        </div>
       </article>
 
 
@@ -55,14 +216,36 @@
   <script>
     new Vue({
       el: '#app',
+      data: {
+        isActive: true
+      },
       methods: {
         onChange: function () {
           let main = document.querySelector('.main');
           main.classList.toggle('toggle');
+        },
+        aa: function () {
+
+          let thisTarget = event.target.getAttribute('data-list');
+          Object.keys(this.$refs).forEach(x => {
+            let thisDom = this.$refs[x].getAttribute('class');
+            if (thisDom.split(' ').includes(`section0${thisTarget}`)) {
+              this.$refs[x].classList.add('active')
+            } else {
+              this.$refs[x].classList.remove('active')
+            }
+          })
+          Array.from(this.$el.querySelectorAll('.timeline ul li')).forEach(x => {
+            x.classList.remove('active')
+          })
+          event.target.classList.add('active')
         }
       }
     })
   </script>
+
+  <!-- select -->
+  <script src="components/Select/select.js"></script>
 
 
 </body>
