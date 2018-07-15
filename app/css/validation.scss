@@ -30,14 +30,13 @@
   }
   .form-group {
     margin-bottom: 2rem;
+  }.section01,
+.section02,
+.section03,
+.section04 {
+  display: none;
+  &.active {
+    display: block;
   }
-  .section01,
-  .section02,
-  .section03,
-  .section04 {
-    display: none;
-    &.active {
-      display: block;
-    }
-  }
+}
 }

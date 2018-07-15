@@ -1,5 +1,14 @@
 $timeline-w: 1.5rem;
 $timeline-h: 1.5rem;
+%timelineLinear {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
 .timeline {
   position: relative;
   ul {
@@ -8,15 +17,33 @@ $timeline-h: 1.5rem;
     padding-left: 0;
     display: flex;
     justify-content: space-between;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      margin-top: -0.5px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: #ccc;
+    &.linear-0 {
+      &:before {
+        content: '';
+        @extend %timelineLinear;
+        background: linear-gradient(90deg, $primary 0%, $primary 0%, lighten($primary, 40) 0%, lighten($primary, 40) 100%);
+      }
+    }
+    &.linear-1 {
+      &:before {
+        content: '';
+        @extend %timelineLinear;
+        background: linear-gradient(90deg, $primary 0%, $primary 33.3%, lighten($primary, 40) 33.3%, lighten($primary, 40) 100%);
+      }
+    }
+    &.linear-2 {
+      &:before {
+        content: '';
+        @extend %timelineLinear;
+        background: linear-gradient(90deg, $primary 0%, $primary 67%, lighten($primary, 40) 67%, lighten($primary, 40) 100%);
+      }
+    }
+    &.linear-3 {
+      &:before {
+        content: '';
+        @extend %timelineLinear;
+        background: linear-gradient(90deg, $primary 0%, $primary 100%, lighten($primary, 40) 100%, lighten($primary, 40) 100%);
+      }
     }
     li {
       position: relative;
@@ -50,8 +77,16 @@ $timeline-h: 1.5rem;
           filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.2));
           transform: scale(0.5);
         }
+        &.ok {
+          &:after {
+            text-indent: 0;
+            content: '✔︎';
+            background: $primary;
+            color: #fff;
+            transform: scale(1);
+          }
+        }
       }
-      &.ok {}
     }
   }
 }

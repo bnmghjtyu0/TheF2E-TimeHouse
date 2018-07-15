@@ -37,9 +37,9 @@
         <div class="container col-6">
           <div class="col-6 offset-3">
             <nav class="timeline">
-              <ul>
+              <ul class="linear-0">
                 <li class="active" data-list="1" v-on:click="aa"></li>
-                <li class="ok" data-list="2" v-on:click="aa"></li>
+                <li data-list="2" v-on:click="aa"></li>
                 <li data-list="3" v-on:click="aa"></li>
                 <li data-list="4" v-on:click="aa"></li>
               </ul>
@@ -225,8 +225,10 @@
           main.classList.toggle('toggle');
         },
         aa: function () {
-
           let thisTarget = event.target.getAttribute('data-list');
+          let timelineUl = document.querySelector('.timeline ul');
+          let timelineLi = Array.from(this.$el.querySelectorAll('.timeline ul li'));
+
           Object.keys(this.$refs).forEach(x => {
             let thisDom = this.$refs[x].getAttribute('class');
             if (thisDom.split(' ').includes(`section0${thisTarget}`)) {
@@ -235,10 +237,57 @@
               this.$refs[x].classList.remove('active')
             }
           })
-          Array.from(this.$el.querySelectorAll('.timeline ul li')).forEach(x => {
+          // 移除所有 active
+          timelineLi.forEach(x => {
             x.classList.remove('active')
           })
+
+          // 目前頁面之前的 timeline 都加入 ok 圖示
+          if (Number(event.target.getAttribute('data-list')) === 1) {
+            timelineLi.forEach((v, i) => {
+              if (i < 1) {
+                v.classList.add('active')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-0')
+              }
+            })
+          }
+          if (Number(event.target.getAttribute('data-list')) === 2) {
+            timelineLi.forEach((v, i) => {
+              if (i < 2) {
+                v.classList.add('active')
+                v.classList.add('ok')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-1')
+              }
+            })
+          }
+          if (Number(event.target.getAttribute('data-list')) === 3) {
+            timelineLi.forEach((v, i) => {
+              if (i < 3) {
+                v.classList.add('active')
+                v.classList.add('ok')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-2')
+              }
+            })
+          }
+          if (Number(event.target.getAttribute('data-list')) === 4) {
+            timelineLi.forEach((v, i) => {
+              if (i < 4) {
+                v.classList.add('active')
+                v.classList.add('ok')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-3')
+              }
+            })
+          }
+
+          // 目前的頁面移除 ok 圖示
           event.target.classList.add('active')
+          event.target.classList.remove('ok')
+
+
         }
       }
     })
