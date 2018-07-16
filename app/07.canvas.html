@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>product</title>
+  <!-- bootstrap scss 自定義檔 -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- fontawesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/canvas.css">
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="import" href="./components/header.html">
+  <link rel="import" href="./components/sidebar.html">
+</head>
+
+<body>
+  <div id="app">
+    <!-- header -->
+    <v-header></v-header>
+    <!-- header end -->
+
+    <!-- sidebar -->
+    <v-sidebar v-on:toggle="onChange"></v-sidebar>
+    <!-- sidebar end -->
+    <main class="main">
+      <article class="canvas">
+        <img src="img/canvas/demo01.jpg" alt="" class="img-fluid">
+      </article>
+
+
+    </main>
+  </div>
+
+
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+    crossorigin="anonymous "></script>
+  <!-- bootstrap 4.0 正式版 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+    crossorigin="anonymous "></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+    crossorigin="anonymous "></script>
+
+  <!-- jQuery library End -->
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        isActive: true
+      },
+      methods: {
+        onChange: function () {
+          let main = document.querySelector('.main');
+          main.classList.toggle('toggle');
+        },
+        aa: function () {
+          let thisTarget = event.target.getAttribute('data-list');
+          let timelineUl = document.querySelector('.timeline ul');
+          let timelineLi = Array.from(this.$el.querySelectorAll('.timeline ul li'));
+
+          Object.keys(this.$refs).forEach(x => {
+            let thisDom = this.$refs[x].getAttribute('class');
+            if (thisDom.split(' ').includes(`section0${thisTarget}`)) {
+              this.$refs[x].classList.add('active')
+            } else {
+              this.$refs[x].classList.remove('active')
+            }
+          })
+          // 移除所有 active
+          timelineLi.forEach(x => {
+            x.classList.remove('active')
+          })
+
+          // 目前頁面之前的 timeline 都加入 ok 圖示
+          if (Number(event.target.getAttribute('data-list')) === 1) {
+            timelineLi.forEach((v, i) => {
+              if (i < 1) {
+                v.classList.add('active')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-0')
+              }
+            })
+          }
+          if (Number(event.target.getAttribute('data-list')) === 2) {
+            timelineLi.forEach((v, i) => {
+              if (i < 2) {
+                v.classList.add('active')
+                v.classList.add('ok')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-1')
+              }
+            })
+          }
+          if (Number(event.target.getAttribute('data-list')) === 3) {
+            timelineLi.forEach((v, i) => {
+              if (i < 3) {
+                v.classList.add('active')
+                v.classList.add('ok')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-2')
+              }
+            })
+          }
+          if (Number(event.target.getAttribute('data-list')) === 4) {
+            timelineLi.forEach((v, i) => {
+              if (i < 4) {
+                v.classList.add('active')
+                v.classList.add('ok')
+                timelineUl.className = '';
+                timelineUl.classList.add('linear-3')
+              }
+            })
+          }
+
+          // 目前的頁面移除 ok 圖示
+          event.target.classList.add('active')
+          event.target.classList.remove('ok')
+
+
+        }
+      }
+    })
+  </script>
+
+  <!-- select -->
+  <script src="components/Select/select.js"></script>
+
+
+</body>
+
+</html>
