@@ -23,7 +23,7 @@
   <link rel="import" href="./components/sidebar.html">
 </head>
 
-<body>
+<body onload="init();">
   <div id="app">
     <!-- header -->
     <v-header></v-header>
@@ -34,10 +34,8 @@
     <!-- sidebar end -->
     <main class="main">
       <article class="canvas">
-        <img src="img/canvas/demo01.jpg" alt="" class="img-fluid">
+        <canvas id="demoCanvas" width="800" height="600"></canvas>
       </article>
-
-
     </main>
   </div>
 
@@ -135,6 +133,125 @@
   <!-- select -->
   <script src="components/Select/select.js"></script>
 
+  <!-- canvas -->
+  <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+  <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
+  <script>
+    var stage;
+
+    function init() {
+      stage = new createjs.Stage(document.getElementById("demoCanvas"));
+      draw();
+    }
+
+    function draw() {
+      // 沿路徑
+      var container = new createjs.Container();
+      var circle = new createjs.Shape();
+      var circleStroke = new createjs.Shape();
+      var circleStrokeOutside = new createjs.Shape();
+      var pinkObj = new createjs.Shape();
+      var triangle = new createjs.Shape()
+      var logo = new createjs.Shape().set({ x: 180, y: 80 });
+      var logoText = new createjs.Text(
+        `Radio Defense`,
+        "20px '微軟正黑體'",
+        "#fff"
+      );
+      var text = new createjs.Text(
+        `
+你身負著運送能量電池的任務
+卻遭到幾何星人的埋伏
+請協助從他們的手中奪回能量電池
+`,
+        "14px '微軟正黑體'",
+        "#fff"
+      );
+
+      circle.graphics.beginFill("#f5af5f").drawCircle(260, 0, 30)
+      circle.regX = 260;
+      circle.regY = 260;
+      circle.x = 400;
+      circle.y = 300;
+
+      circleStroke.graphics
+        .beginFill()
+        .beginStroke("#fff")
+        .drawCircle(400, 300, 180);
+
+      circleStrokeOutside.graphics
+        .beginFill()
+        .beginStroke("rgba(255,255,255,0.2)")
+        .drawCircle(400, 300, 260);
+
+      pinkObj.graphics
+        .beginFill("rgba(231,70,93,1)")
+        .p("EgB4AVaMgEtABlMACEAEnMAE7ABvMAAOAAEMACHgDdMgAWgC6MgEQgBn");
+      pinkObj.x = 100;
+
+      triangle.graphics
+        .beginFill("rgba(54,118,187,1)")
+        .p("EA5OA2EMgFfAICMAJpAA8MgEKgI+");
+
+      triangle.regX = 370;
+      triangle.regY = 400;
+      triangle.x = 650;
+      triangle.y = 500;
+
+      text.x = 20;
+      text.y = 500;
+      text.textBaseline = "hanging";
+
+      logo.graphics
+        .f("rgba(255,255,255,1)")
+        .p(
+          "EAlTAgLcAAAAATgAFAASgAKAARcgAKAARgAPAAPgAUAAMcAAKAADAAIAAFAAHAAGcAAHAAGAAGAAHAAEAAIcAAEAAIAADAAIAACAAJcAACAAJAABAAJAAAAAJcAAAAAAAAAABAAAAAAAcAAAAAIAACAAJAAEAALcAAEAALAAFAALAAHAALcAAAAAAgBRAAAAAAAAAcgADgAFgADgAFgACgAFcgACgAFgABgAFgABgAFcgABgAFgABgAFgAAgAFcgAAgAFgAAgAEAAAgAEcAAAAAAAAAgBDAAAAAAcAAAgAHgABgAHgACgAHcgACgAHgAiAASgAFgAFcgAFgAFAAYgAcgAIgADcgAIgADgAKgACgALAAAMgBwAAAMAAAAC1MgBLAAAMAAAgG4cAAAAAAAC7AAAAAAAAAcAAXAAAAAUAAEAASAAIcAASAAIAAPAAKAAMAAMcAAMAAMAAJAAOAAGAAPcAAGAAPAADAAQAAAAAQ"
+        )
+        .f("#001D2E")
+        .p(
+          "EAhVAhPcAAAAAAABwAAAAAAAAAcAAJAAAAAJgACAAIgADcAAIgADAAHgAFAAGgAGcAAGgAGAAFgAHAAEgAIcAAEgAIAACgAJAAAgAKcAAAgAKgACgAJgADgAIcgADgAIgAFgAHgAGgAGcgAGgAGgAHgAFgAIgADcgAIgADgAJgACgAKAAAMgBwAAAMAAAACG"
+        );
+
+      logoText.x = 326;
+      logoText.y = 334;
+      logoText.textBaseline = "hanging";
+      var logoIcon = new createjs.Shape().set({ x: 180, y: 80 });
+      logoIcon.graphics
+        .f("rgba(245,175,95,1)")
+        .p("EAexAklMgChAAAMAAAAAWMAChAAAMAAAgAW")
+        .ef()
+        .f("rgba(245,175,95,1)")
+        .p("EAexAkSMgChAAAMAAAgETMAChAAAMAAAAET")
+        .ef()
+        .f("rgba(255,255,255,1)")
+        .p("EAeEAf/MgBHAAAMAAAgAWMABHAAAMAAAAAX")
+        .ef()
+        .f("rgba(255,255,255,1)")
+        .p("EAdsAg+MgA2ABVMAA0gAAMgAJABAMAAzgBXMgA7AAAcAAAAAAAATgA+AAAAAA")
+        .ef()
+        .cp();
+
+      container.addChild(circle);
+      container.addChild(circleStroke);
+      container.addChild(circleStrokeOutside);
+      container.addChild(pinkObj);
+      container.addChild(triangle);
+      container.addChild(text);
+      container.addChild(logo);
+      container.addChild(logoText);
+      container.addChild(logoIcon);
+
+      createjs.Tween.get(triangle, { loop: true }).to({ rotation: 360 }, 3000);
+      createjs.Tween.get(circle, { loop: true }).to({ rotation: 360 }, 20000);
+      createjs.Ticker.setFPS(60);
+      createjs.Ticker.addEventListener("tick", stage);
+
+
+      stage.addChild(container);
+      stage.update();
+    }
+
+  </script>
 
 </body>
 
