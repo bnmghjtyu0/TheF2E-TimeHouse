@@ -134,7 +134,80 @@
   <script src="components/Select/select.js"></script>
 
   <!-- canvas -->
-  <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+
+  <script>
+
+    var canvas = document.getElementById('demoCanvas')
+    ctx = canvas.getContext('2d')
+    canvas.width = 800;
+    canvas.height = 600;
+
+    function draw() {
+
+      // 畫格線
+      ctx.beginPath()
+      for (var i = 0; i < canvas.width / 50; i++) {
+        let pos = i * 50
+        ctx.moveTo(pos, 0)
+        ctx.lineTo(pos, canvas.width)
+        ctx.fillText(pos, pos, 10)
+        ctx.fillStyle = 'white'
+
+        ctx.moveTo(0, pos)
+        ctx.lineTo(canvas.height * 2, pos)
+        ctx.fillText(pos, 10, pos)
+        ctx.fillStyle = 'white'
+      }
+
+      ctx.strokeStyle = 'rgba(255,255,255,.2)'
+      ctx.stroke()
+
+
+      // 畫圓形
+      ctx.beginPath()
+      ctx.arc(600, 100, 30, 0, Math.PI * 2)
+      ctx.fillStyle = '#F8AE64'
+      ctx.fill()
+
+      // 畫多邊形
+      ctx.beginPath()
+      ctx.moveTo(100, 100)
+      ctx.lineTo(100, 50)
+      ctx.lineTo(150, 50)
+      ctx.lineTo(150, 100)
+      ctx.closePath()
+      ctx.fillStyle = '#EA465C'
+      ctx.fill()
+
+      // 畫三角形
+      ctx.beginPath()
+      ctx.moveTo(600, 500)
+      ctx.lineTo(625, 450)
+      ctx.lineTo(650, 500)
+      ctx.closePath()
+      ctx.fillStyle = '#EA465C'
+      ctx.fill()
+
+
+      // 畫大圓
+      ctx.beginPath()
+      ctx.arc(400, 300, 150, 0, Math.PI * 2)
+      ctx.strokeStyle = 'white'
+      ctx.stroke()
+
+      // 畫大圓2
+      ctx.beginPath()
+      ctx.arc(400, 300, 250, 0, Math.PI * 2)
+      ctx.strokeStyle = 'white'
+      ctx.stroke()
+
+    }
+    draw()
+  </script>
+
+
+  <!-- canvas createjs -->
+  <!-- <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
   <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
   <script>
     var stage;
@@ -251,7 +324,7 @@
       stage.update();
     }
 
-  </script>
+  </script> -->
 
 </body>
 
