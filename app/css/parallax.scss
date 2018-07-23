@@ -1,0 +1,250 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'components/variables';
+@import 'main.scss';
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+#app {
+  height: calc(100% - 30px);
+  overflow: hidden;
+}
+.main {
+  position: relative;
+  height: 100%;
+}
+
+.parallax {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #1469ff;
+  overflow: hidden;
+}
+$size: 500px;
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  color: #fff;
+  z-index: 3;
+  text-align: center;
+  h2 {
+    font-size: 6.4rem;
+    margin: 0;
+  }
+  p {
+    font-size: 2.4rem;
+  }
+}
+
+#section01 {
+  .Rect {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -$size/2;
+    margin-top: -$size/2;
+    width: $size;
+    height: $size;
+    background-color: #000;
+    animation: RectAni 3s ease-in-out forwards;
+  }
+
+  .Circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -$size/2;
+    margin-top: -$size/2;
+    width: $size;
+    height: $size;
+    border-radius: 100%;
+    background-color: #0027c8;
+    animation: CircleAni 3.2s ease-in-out forwards;
+    z-index: 2;
+  }
+
+  .Star {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -35px;
+    top: 50%;
+    background-color: #0027c8;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-right: 100px solid transparent;
+    border-bottom: 70px solid #ff3c82;
+    border-left: 100px solid transparent;
+    animation: StarAni 3.4s ease-in-out forwards;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      position: absolute;
+      border-bottom: 80px solid #ff3c82;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      height: 0;
+      width: 0;
+      top: -45px;
+      left: -65px;
+      display: block;
+      -webkit-transform: rotate(-35deg);
+      -moz-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+      -o-transform: rotate(-35deg);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      color: #ff3c82;
+      top: 3px;
+      left: -105px;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #ff3c82;
+      border-left: 100px solid transparent;
+      -webkit-transform: rotate(-70deg);
+      -moz-transform: rotate(-70deg);
+      -ms-transform: rotate(-70deg);
+      -o-transform: rotate(-70deg);
+    }
+  }
+
+  @keyframes RectAni {
+    0% {
+      transform: scale(1) rotate(180deg);
+    }
+    80% {
+      transform: scale(1) rotate(0deg);
+    }
+    100% {
+      transform: scale(10) rotate(0deg);
+    }
+  }
+
+  @keyframes CircleAni {
+    0% {
+      transform: scale(1.2) rotate(180deg);
+    }
+    80% {
+      transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+      transform: scale(10) rotate(360deg);
+    }
+  }
+
+  @keyframes StarAni {
+    0% {
+      transform: scale(1) rotate(180deg);
+    }
+    80% {
+      transform: scale(1) rotate(360deg);
+    }
+    100% {
+      transform: scale(25) rotate(360deg);
+    }
+  }
+}
+
+#section02 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  .left {
+    width: 60%;
+    height: 100%;
+    padding: 6rem 20rem;
+    font-family: $fm1;
+    .num {
+      font-size: 6.4rem;
+      color: #ff3c82;
+      font-weight: bold;
+    }
+    .content {
+      font-size: 3.6rem;
+      color: #fff;
+      font-weight: bold;
+    }
+    .choose {
+      .title {
+        color: #0027c8;
+        font-size: 2.4rem;
+        padding: 2rem 0;
+      }
+      .nav {
+        a {
+          border-radius: 25px;
+          width: 100%;
+          display: block;
+          border: 2px solid #fff;
+          color: #fff;
+          font-size: 2rem;
+          margin: 12px 0;
+          padding: 1rem 0;
+          &.active,
+          &:hover {
+            background-color: #fff;
+            color: #1469ff;
+          }
+        }
+      }
+    }
+  }
+  .right {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background-color: #0027c8;
+    right: -40%;
+    $size: 200px;
+    .Rect {
+      position: absolute;
+      left: 10%;
+      bottom: -70%;
+      width: $size;
+      height: $size;
+      background-color: #ff3c82;
+    }
+
+    .Circle {
+      position: absolute;
+      right: -10%;
+      bottom: -50%;
+      width: $size * 2;
+      height: $size * 2;
+      border-radius: 100%;
+      background-color: #000;
+      z-index: 2;
+    }
+
+    .Triangle {
+      position: absolute;
+      right: 0;
+      bottom: -50%;
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 80px 100px 80px;
+      border-color: transparent transparent #fff transparent;
+      z-index: 2;
+    }
+  }
+}
