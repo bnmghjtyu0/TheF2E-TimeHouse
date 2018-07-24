@@ -159,7 +159,7 @@ $size: 500px;
   }
 }
 %textBlock {
-  width: 60%;
+  flex: 1 1 auto;
   padding: 6rem 10%;
   height: 100%;
   font-family: $fm1;
@@ -238,7 +238,8 @@ $size: 500px;
   }
   .right {
     position: relative;
-    width: 40%;
+    flex: 1 0 40%;
+    max-width: 40%;
     height: 100%;
     background-color: #0027c8;
     right: -40%;
@@ -264,7 +265,8 @@ $size: 500px;
   display: flex;
   .left {
     position: relative;
-    width: 40%;
+    flex: 1 0 40%;
+    max-width: 40%;
     height: 100%;
     background: map-get($colors, pink);
     left: -40%;
@@ -282,9 +284,88 @@ $size: 500px;
       border-color: transparent transparent #fff transparent;
     }
   }
+  .right {
+    @extend %textBlock;
+    position: relative;
+    background: map-get($colors, deepblue);
+    nav {
+      a {
+        &:hover {
+          color: map-get($colors, deepblue);
+        }
+      }
+    }
+  }
 }
-.right {
-  @extend %textBlock;
-  position: relative;
-  background: map-get($colors, deepblue);
+#section04 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  .left {
+    @extend %textBlock;
+    position: relative;
+    background: map-get($colors, pink);
+    .num {
+      color: #fff;
+    }
+    .content {
+      color: #000;
+    }
+    .choose {
+      .title {
+        color: #000;
+      }
+    }
+    nav {
+      a {
+        &:hover {
+          color: map-get($colors, pink);
+        }
+      }
+    }
+  }
+  $size: 200px;
+  .right {
+    position: relative;
+    flex: 1 0 40%;
+    max-width: 40%;
+    height: 100%;
+    right: -40%;
+    background: map-get($colors, blue);
+    .Rect {
+      background-color: map-get($colors, deepblue);
+    }
+    .Circle {
+      background-color: #fff;
+      width: $size;
+      height: $size;
+    }
+    .Triangle {
+      border-width: 0 80px 100px 80px;
+      border-color: transparent transparent #000 transparent;
+    }
+  }
+}
+#section05 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content {
+    color: #fff;
+    font-family: $fm1;
+    h2 {
+      font-size: 6.4rem;
+    }
+    p {
+      font-size: 2.4rem;
+    }
+  }
 }

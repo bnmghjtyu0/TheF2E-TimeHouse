@@ -85,7 +85,36 @@
                 <a href="#" class="btn">Open Google Map</a>
               </nav>
             </div>
+          </div>
+        </div>
 
+        <div id="section04" class="section-Question">
+          <div class="left">
+            <div class="num">Q3</div>
+            <div class="content">
+              When you’re in a exam which you barely prepared for, which is your priority solution?
+            </div>
+            <div class="choose">
+              <h4 class="title">Choose the answer appeared in your mind instantly</h4>
+              <nav class="nav">
+                <a href="#" class="btn">Take a nap right away</a>
+                <a href="#" class="btn">Fill the answer randomly</a>
+                <a href="#" class="btn">All fill the answer "C"</a>
+              </nav>
+            </div>
+          </div>
+          <div class="right">
+            <div class="Rect"></div>
+            <div class="Circle"></div>
+            <div class="Triangle"></div>
+
+          </div>
+        </div>
+
+        <div id="section05">
+          <div class="content">
+            <h2>ALL DONE!</h2>
+            <p>Keep scrolling to show the result</p>
           </div>
         </div>
       </article>
@@ -131,6 +160,9 @@
         let section01 = document.querySelector('#section01')
         let section02 = document.querySelector('#section02')
         let section03 = document.querySelector('#section03')
+        let section04 = document.querySelector('#section04')
+        let section05 = document.querySelector('#section05')
+
         let section02Right = section02.querySelector('.right')
         let section02Rect = section02.querySelector('.right .Rect')
         let section02Triangle = section02.querySelector('.right .Triangle')
@@ -139,10 +171,18 @@
         let section03Rect = section03.querySelector('.Rect')
         let section03Triangle = section03.querySelector('.Triangle')
         let section03Circle = section03.querySelector('.Circle')
+        let section04Right = section04.querySelector('.right')
+        let section04Rect = section04.querySelector('.Rect')
+        let section04Triangle = section04.querySelector('.Triangle')
+        let section04Circle = section04.querySelector('.Circle')
+
         let tl = new TimelineMax({ paused: false });
+
         tl.set(section01, { autoAlpha: 1 })
         tl.set(section02, { autoAlpha: 0 })
         tl.set(section03, { autoAlpha: 0 })
+        tl.set(section04, { autoAlpha: 0 })
+        tl.set(section05, { autoAlpha: 0 })
         tl.from(section01, 1, { delay: 2 })
         tl.to(section01, 1, { autoAlpha: 0 })
         tl.to(section02, 1, { autoAlpha: 1 })
@@ -162,6 +202,27 @@
             tl.to(section03Rect, 1, { top: 120, rotation: 90 })
             tl.to(section03Triangle, 1, { top: '50%', rotation: 90 })
             tl.to(section03Circle, 1, { bottom: '20%', left: '50%' })
+          }
+        })
+        let section03Link = Array.from(section03.querySelectorAll('nav a'))
+        section03Link.map(a => {
+          a.onclick = function () {
+            tl.to(section03, 1, { autoAlpha: 0 })
+            tl.to(parallax, 1, { backgroundColor: '#ff3c82' })
+            tl.to(section04, 1, { autoAlpha: 1 })
+            tl.to(section04Right, 1, { right: 0 })
+            tl.to(section04Rect, 1, { top: 120, rotation: 90 })
+            tl.to(section04Triangle, 1, { top: '50%', rotation: 90 })
+            tl.to(section04Circle, 1, { bottom: '20%' })
+          }
+        })
+
+        let section04Link = Array.from(section04.querySelectorAll('nav a'))
+        section04Link.map(a => {
+          a.onclick = function () {
+            tl.to(section04, 1, { autoAlpha: 0 })
+            tl.to(parallax, 1, { backgroundColor: '#1469ff' })
+            tl.to(section05, 1, { autoAlpha: 1 })
           }
         })
 
