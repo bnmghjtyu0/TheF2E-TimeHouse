@@ -1,12 +1,20 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'components/variables';
 @import 'main.scss';
+$colors: (
+  blue: #1469ff,
+  deepblue: #0027c8,
+  pink: #ff3c82
+);
+
 html {
   height: 100%;
 }
+
 body {
   height: 100%;
 }
+
 #app {
   height: calc(100% - 30px);
   overflow: hidden;
@@ -15,7 +23,6 @@ body {
   position: relative;
   height: 100%;
 }
-
 .parallax {
   position: absolute;
   width: 100%;
@@ -43,7 +50,6 @@ $size: 500px;
     font-size: 2.4rem;
   }
 }
-
 #section01 {
   .Rect {
     position: absolute;
@@ -56,7 +62,6 @@ $size: 500px;
     background-color: #000;
     animation: RectAni 3s ease-in-out forwards;
   }
-
   .Circle {
     position: absolute;
     left: 50%;
@@ -70,7 +75,6 @@ $size: 500px;
     animation: CircleAni 3.2s ease-in-out forwards;
     z-index: 2;
   }
-
   .Star {
     position: absolute;
     left: 50%;
@@ -82,15 +86,14 @@ $size: 500px;
     width: 0px;
     height: 0px;
     border-right: 100px solid transparent;
-    border-bottom: 70px solid #ff3c82;
+    border-bottom: 70px solid map-get($colors, pink);
     border-left: 100px solid transparent;
     animation: StarAni 3.4s ease-in-out forwards;
     z-index: 2;
-
     &:before {
       content: '';
       position: absolute;
-      border-bottom: 80px solid #ff3c82;
+      border-bottom: 80px solid map-get($colors, pink);
       border-left: 30px solid transparent;
       border-right: 30px solid transparent;
       height: 0;
@@ -103,18 +106,17 @@ $size: 500px;
       -ms-transform: rotate(-35deg);
       -o-transform: rotate(-35deg);
     }
-
     &:after {
       content: '';
       position: absolute;
       display: block;
-      color: #ff3c82;
+      color: map-get($colors, pink);
       top: 3px;
       left: -105px;
       width: 0px;
       height: 0px;
       border-right: 100px solid transparent;
-      border-bottom: 70px solid #ff3c82;
+      border-bottom: 70px solid map-get($colors, pink);
       border-left: 100px solid transparent;
       -webkit-transform: rotate(-70deg);
       -moz-transform: rotate(-70deg);
@@ -122,7 +124,6 @@ $size: 500px;
       -o-transform: rotate(-70deg);
     }
   }
-
   @keyframes RectAni {
     0% {
       transform: scale(1) rotate(180deg);
@@ -134,7 +135,6 @@ $size: 500px;
       transform: scale(10) rotate(0deg);
     }
   }
-
   @keyframes CircleAni {
     0% {
       transform: scale(1.2) rotate(180deg);
@@ -146,7 +146,6 @@ $size: 500px;
       transform: scale(10) rotate(360deg);
     }
   }
-
   @keyframes StarAni {
     0% {
       transform: scale(1) rotate(180deg);
@@ -159,7 +158,74 @@ $size: 500px;
     }
   }
 }
-
+%textBlock {
+  width: 60%;
+  padding: 6rem 10%;
+  height: 100%;
+  font-family: $fm1;
+}
+// 問題樣式
+.section-Question {
+  .num {
+    font-size: 6.4rem;
+    color: map-get($colors, pink);
+    font-weight: bold;
+  }
+  .content {
+    font-size: 3.6rem;
+    color: #fff;
+    font-weight: bold;
+  }
+  .choose {
+    .title {
+      color: map-get($colors, blue);
+      font-size: 2.4rem;
+      padding: 2rem 0;
+    }
+    .nav {
+      a {
+        border-radius: 25px;
+        width: 100%;
+        display: block;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 2rem;
+        margin: 12px 0;
+        padding: 1rem 0;
+        &.active,
+        &:hover {
+          background-color: #fff;
+          color: #1469ff;
+        }
+      }
+    }
+  }
+  $size: 200px;
+  .Rect {
+    position: absolute;
+    width: $size;
+    height: $size;
+    bottom: -100%;
+  }
+  .Circle {
+    position: absolute;
+    width: $size * 2;
+    height: $size * 2;
+    border-radius: 100%;
+    z-index: 2;
+    bottom: -100%;
+  }
+  .Triangle {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 80px 100px 80px;
+    z-index: 2;
+    bottom: -100%;
+  }
+}
 #section02 {
   position: absolute;
   width: 100%;
@@ -168,44 +234,7 @@ $size: 500px;
   z-index: 4;
   display: flex;
   .left {
-    width: 60%;
-    height: 100%;
-    padding: 6rem 20rem;
-    font-family: $fm1;
-    .num {
-      font-size: 6.4rem;
-      color: #ff3c82;
-      font-weight: bold;
-    }
-    .content {
-      font-size: 3.6rem;
-      color: #fff;
-      font-weight: bold;
-    }
-    .choose {
-      .title {
-        color: #0027c8;
-        font-size: 2.4rem;
-        padding: 2rem 0;
-      }
-      .nav {
-        a {
-          border-radius: 25px;
-          width: 100%;
-          display: block;
-          border: 2px solid #fff;
-          color: #fff;
-          font-size: 2rem;
-          margin: 12px 0;
-          padding: 1rem 0;
-          &.active,
-          &:hover {
-            background-color: #fff;
-            color: #1469ff;
-          }
-        }
-      }
-    }
+    @extend %textBlock;
   }
   .right {
     position: relative;
@@ -215,36 +244,47 @@ $size: 500px;
     right: -40%;
     $size: 200px;
     .Rect {
-      position: absolute;
-      left: 10%;
-      bottom: -70%;
-      width: $size;
-      height: $size;
-      background-color: #ff3c82;
+      background-color: map-get($colors, pink);
     }
-
     .Circle {
-      position: absolute;
-      right: -10%;
-      bottom: -50%;
-      width: $size * 2;
-      height: $size * 2;
-      border-radius: 100%;
       background-color: #000;
-      z-index: 2;
     }
-
     .Triangle {
-      position: absolute;
-      right: 0;
-      bottom: -50%;
-      display: block;
-      width: 0;
-      height: 0;
-      border-style: solid;
       border-width: 0 80px 100px 80px;
       border-color: transparent transparent #fff transparent;
-      z-index: 2;
     }
   }
+}
+#section03 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  .left {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    background: map-get($colors, pink);
+    left: -40%;
+    $size: 200px;
+    .Rect {
+      background-color: map-get($colors, blue);
+    }
+    .Circle {
+      background-color: #000;
+      width: $size;
+      height: $size;
+    }
+    .Triangle {
+      border-width: 0 80px 100px 80px;
+      border-color: transparent transparent #fff transparent;
+    }
+  }
+}
+.right {
+  @extend %textBlock;
+  position: relative;
+  background: map-get($colors, deepblue);
 }
