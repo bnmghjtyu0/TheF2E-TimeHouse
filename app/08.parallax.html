@@ -178,12 +178,15 @@
 
         let tl = new TimelineMax({ paused: false });
 
+        // 動畫開始
         tl.set(section01, { autoAlpha: 1 })
         tl.set(section02, { autoAlpha: 0 })
         tl.set(section03, { autoAlpha: 0 })
         tl.set(section04, { autoAlpha: 0 })
         tl.set(section05, { autoAlpha: 0 })
         tl.from(section01, 1, { delay: 2 })
+
+        // 進入第一題
         tl.to(section01, 1, { autoAlpha: 0 })
         tl.to(section02, 1, { autoAlpha: 1 })
         tl.to(section02Right, 1, { right: 0 })
@@ -195,8 +198,10 @@
         let section02Link = Array.from(section02.querySelectorAll('nav a'))
         section02Link.map(a => {
           a.onclick = function () {
+            tl.to('#section02 .left,#section02 .right >*', 1, { autoAlpha: 0 })
+            tl.to('#section02 .right', 1, { width: '100%' })
+            tl.set(parallax, { backgroundColor: '#0027c8' })
             tl.to(section02, 1, { autoAlpha: 0 })
-            tl.to(parallax, 1, { backgroundColor: '#0027c8' })
             tl.to(section03, 1, { autoAlpha: 1 })
             tl.to(section03Left, 1, { left: 0 })
             tl.to(section03Rect, 1, { top: 120, rotation: 90 })
@@ -207,8 +212,10 @@
         let section03Link = Array.from(section03.querySelectorAll('nav a'))
         section03Link.map(a => {
           a.onclick = function () {
+            tl.to('#section03 .right,#section03 .left >*', 1, { autoAlpha: 0 })
+            tl.to('#section03 .left', 1, { width: '100%' })
+            tl.set(parallax, { backgroundColor: '#ff3c82' })
             tl.to(section03, 1, { autoAlpha: 0 })
-            tl.to(parallax, 1, { backgroundColor: '#ff3c82' })
             tl.to(section04, 1, { autoAlpha: 1 })
             tl.to(section04Right, 1, { right: 0 })
             tl.to(section04Rect, 1, { top: 120, rotation: 90 })
@@ -220,8 +227,10 @@
         let section04Link = Array.from(section04.querySelectorAll('nav a'))
         section04Link.map(a => {
           a.onclick = function () {
+            tl.to('#section04 .left,#section04 .right >*', 1, { autoAlpha: 0 })
+            tl.to('#section04 .right', 1, { width: '100%' })
+            tl.set(parallax, { backgroundColor: '#1469ff' })
             tl.to(section04, 1, { autoAlpha: 0 })
-            tl.to(parallax, 1, { backgroundColor: '#1469ff' })
             tl.to(section05, 1, { autoAlpha: 1 })
           }
         })

@@ -159,9 +159,10 @@ $size: 500px;
   }
 }
 %textBlock {
-  flex: 1 1 auto;
-  padding: 6rem 10%;
+  position: absolute;
+  width: 60%;
   height: 100%;
+  padding: 6rem 10%;
   font-family: $fm1;
 }
 // 問題樣式
@@ -232,17 +233,22 @@ $size: 500px;
   height: 100%;
   top: 0;
   z-index: 4;
-  display: flex;
   .left {
+    left: 0;
     @extend %textBlock;
+    .choose {
+      .title {
+        color: map-get($colors, deepblue);
+      }
+    }
   }
   .right {
-    position: relative;
-    flex: 1 0 40%;
-    max-width: 40%;
-    height: 100%;
-    background-color: #0027c8;
+    position: absolute;
+    top: 0;
     right: -40%;
+    height: 100%;
+    width: 40%;
+    background-color: #0027c8;
     $size: 200px;
     .Rect {
       background-color: map-get($colors, pink);
@@ -264,9 +270,8 @@ $size: 500px;
   z-index: 4;
   display: flex;
   .left {
-    position: relative;
-    flex: 1 0 40%;
-    max-width: 40%;
+    position: absolute;
+    width: 40%;
     height: 100%;
     background: map-get($colors, pink);
     left: -40%;
@@ -286,7 +291,7 @@ $size: 500px;
   }
   .right {
     @extend %textBlock;
-    position: relative;
+    right: 0;
     background: map-get($colors, deepblue);
     nav {
       a {
@@ -306,7 +311,6 @@ $size: 500px;
   display: flex;
   .left {
     @extend %textBlock;
-    position: relative;
     background: map-get($colors, pink);
     .num {
       color: #fff;
@@ -329,9 +333,8 @@ $size: 500px;
   }
   $size: 200px;
   .right {
-    position: relative;
-    flex: 1 0 40%;
-    max-width: 40%;
+    position: absolute;
+    width: 40%;
     height: 100%;
     right: -40%;
     background: map-get($colors, blue);
