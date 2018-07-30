@@ -49,6 +49,7 @@ body {
   padding: 0.75rem;
   margin-top: $navbar-h;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
   @extend %transition;
   &.show {
     @extend %closeSidebar;

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>product</title>
+  <!-- bootstrap scss 自定義檔 -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- fontawesome 5 -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/parallax.css">
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="import" href="./components/header.html">
+  <link rel="import" href="./components/sidebar.html">
+
+</head>
+
+<body>
+  <div id="app">
+    <!-- header -->
+    <v-header></v-header>
+    <!-- header end -->
+
+    <!-- sidebar -->
+    <v-sidebar v-on:toggle="onChange"></v-sidebar>
+    <!-- sidebar end -->
+    <main class="main">
+      <article class="skill-tree">
+        skill-tree
+      </article>
+    </main>
+  </div>
+
+
+  <!-- jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+    crossorigin="anonymous "></script>
+  <!-- bootstrap 4.0 正式版 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+    crossorigin="anonymous "></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+    crossorigin="anonymous "></script>
+
+  <!-- jQuery library End -->
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        isActive: true
+      },
+      methods: {
+        onChange: function () {
+          let main = document.querySelector('.main');
+          main.classList.toggle('toggle');
+        }
+      }
+    })
+  </script>
+
+  <!-- select -->
+  <script src="components/Select/select.js"></script>
+
+
+</body>
+
+</html>
